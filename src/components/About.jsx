@@ -8,8 +8,13 @@ export default function About() {
           <div className="about__content animate-in">
             <span className="section-label">About Me</span>
             <h2 className="section-title">Crafting Cloud Infrastructure That Scales</h2>
-            <div className="about__text">
-              <p>
+            
+            <div className="about__bio-container">
+              <div className="about__avatar-wrapper">
+                <img src="/profile.png" alt="Hemachandiran Giri" className="about__avatar" />
+              </div>
+              <div className="about__text">
+                <p>
                 I'm an <strong>AWS DevOps Engineer</strong> with 3+ years of hands-on experience
                 building cloud-native infrastructure, container orchestration with ECS Fargate,
                 and CI/CD automation pipelines that ship code reliably.
@@ -27,6 +32,7 @@ export default function About() {
                 multi-region expansions across EU, and built event aggregation Lambdas that
                 auto-triaged on-call incidents at scale.
               </p>
+              </div>
             </div>
           </div>
 

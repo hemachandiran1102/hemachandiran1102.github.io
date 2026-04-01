@@ -7,6 +7,7 @@ const EXPERIENCES = [
     location: 'Remote',
     period: 'Jun 2025 — Present',
     current: true,
+    summary: 'Architecting highly available serverless infrastructure for Medzen Innovations and local SMBs. Focus on infrastructure as code, automated pipelines, and workflow optimizations.',
     bullets: [
       'Architected production-grade AWS infrastructure (ap-south-1) from scratch for Medzen Innovations — ECS Fargate, Aurora v2, ElastiCache Redis, Terraform IaC, dual GitHub Actions CI/CD pipelines.',
       'Built self-hosted n8n workflow automation with WhatsApp Business API for local SMBs, automating order notifications and appointment scheduling.',
@@ -18,7 +19,8 @@ const EXPERIENCES = [
     company: 'Amazon',
     location: 'Bangalore, India',
     period: 'Jun 2024 — Jun 2025',
-    logo: '🟠',
+    logoSrc: '/logos/amazon.png',
+    summary: 'Spearheaded critical migration and multi-region expansion projects for Amazon infrastructure. Designed automated diagnostic tools that significantly reduced incident response times.',
     bullets: [
       'Managed containerised applications on Kubernetes (EKS) and Amazon ECS, ensuring high availability, auto-scaling, and persistent storage across multiple microservice clusters.',
       'Led zero-downtime migration of customer-facing services from Citrix NetScaler to Tardigrade Load Balancer using CloudFormation and CDK templates.',
@@ -32,6 +34,8 @@ const EXPERIENCES = [
     company: 'Infiniti Research — Cessna Business Park',
     location: 'Bangalore, India',
     period: 'May 2023 — May 2024',
+    logoSrc: '/logos/infiniti.png',
+    summary: 'Streamlined release lifecycles and enhanced system observability. Integrated security tooling into automated pipelines and maintained high-uptime dashboard alerts.',
     bullets: [
       'Managed end-to-end release lifecycle using Azure DevOps Pipelines and AWS CodePipeline, reducing deployment time by 30%.',
       'Maintained Grafana and Prometheus dashboards with threshold-based alerts integrated with PagerDuty and Squadcast.',
@@ -45,6 +49,7 @@ const EXPERIENCES = [
     company: 'Self-Employed (RoR Application)',
     location: 'Remote',
     period: 'Jan 2023 — May 2023',
+    summary: 'Modernized legacy application stacks by migrating from provisioned servers to fully managed serverless containers.',
     bullets: [
       'Migrated payment gateway from Elastic Beanstalk to AWS Fargate serverless architecture, improving scalability and eliminating server management overhead.',
     ],
@@ -55,6 +60,8 @@ const EXPERIENCES = [
     company: 'PondyBiz Technologies',
     location: 'Pondicherry, India',
     period: 'Jan 2022 — Dec 2022',
+    logoSrc: '/logos/pondybiz.png',
+    summary: 'Led deployment orchestration across diverse technology stacks and established foundational AWS cloud architectures for production environments.',
     bullets: [
       'Managed releases across 5 environments using Jenkins and GitLab CI/CD for Node.js, Vue.js, PHP, and Rails stacks.',
       'Provisioned 3-tier AWS architectures (EC2, RDS, S3, CloudFront, VPC); configured NGINX and Apache.',
@@ -86,19 +93,25 @@ export default function Experience() {
 
               <div className="experience__card glass-card">
                 <div className="experience__header">
-                  <div>
-                    <h3 className="experience__title">{exp.title}</h3>
-                    <div className="experience__meta">
-                      <span className="experience__company">
-                        {exp.logo && <span className="experience__company-logo">{exp.logo}</span>}
-                        {exp.company}
-                      </span>
-                      <span className="experience__separator">•</span>
-                      <span>{exp.location}</span>
+                  <div className="experience__header-main">
+                    {exp.logoSrc && (
+                      <div className="experience__logo-container">
+                        <img src={exp.logoSrc} alt={`${exp.company} logo`} className="experience__logo" />
+                      </div>
+                    )}
+                    <div>
+                      <h3 className="experience__title">{exp.title}</h3>
+                      <div className="experience__meta">
+                        <span className="experience__company">{exp.company}</span>
+                        <span className="experience__separator">•</span>
+                        <span>{exp.location}</span>
+                      </div>
                     </div>
                   </div>
                   <span className="experience__period mono">{exp.period}</span>
                 </div>
+
+                {exp.summary && <p className="experience__summary">{exp.summary}</p>}
 
                 <ul className="experience__bullets">
                   {exp.bullets.map((bullet, j) => (
