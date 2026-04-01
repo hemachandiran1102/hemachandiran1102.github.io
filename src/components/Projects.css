@@ -1,0 +1,123 @@
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.projects__card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.projects__card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--card-accent);
+  opacity: 0;
+  transition: opacity var(--transition-smooth);
+}
+
+.projects__card:hover::before {
+  opacity: 1;
+}
+
+.projects__card--featured {
+  grid-column: 1 / -1;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.04) 0%, var(--bg-card) 100%);
+  border-color: rgba(249, 115, 22, 0.15);
+}
+
+.projects__card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.projects__card-icon {
+  color: var(--card-accent);
+  opacity: 0.8;
+}
+
+.projects__card-links {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.projects__year {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  padding: 3px 10px;
+  background: rgba(148, 163, 184, 0.06);
+  border-radius: 4px;
+}
+
+.projects__external-link {
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.projects__external-link:hover {
+  color: var(--card-accent);
+  transform: translateY(-1px);
+}
+
+.projects__card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.projects__card-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.projects__card-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.projects__tech-tag {
+  font-size: 0.7rem;
+  padding: 3px 10px;
+  color: var(--text-muted);
+  background: rgba(148, 163, 184, 0.06);
+  border-radius: 4px;
+}
+
+.projects__featured-badge {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 0.7rem;
+  color: var(--accent-primary);
+  padding: 4px 12px;
+  background: var(--accent-glow);
+  border-radius: 4px;
+  border: 1px solid rgba(249, 115, 22, 0.2);
+}
+
+@media (max-width: 768px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects__card--featured {
+    grid-column: auto;
+  }
+}

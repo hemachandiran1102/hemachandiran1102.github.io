@@ -1,0 +1,166 @@
+.architecture__content {
+  margin-top: 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+.architecture__diagram {
+  padding: 0;
+  overflow: hidden;
+  position: sticky;
+  top: 100px;
+}
+
+.architecture__diagram-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.architecture__visual {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+}
+
+.arch__layer {
+  width: 100%;
+  padding: 16px;
+  border-radius: var(--radius-sm);
+  position: relative;
+}
+
+.arch__layer--internet {
+  background: rgba(249, 115, 22, 0.06);
+  border: 1px solid rgba(249, 115, 22, 0.15);
+}
+
+.arch__layer--public {
+  background: rgba(34, 211, 238, 0.06);
+  border: 1px solid rgba(34, 211, 238, 0.15);
+}
+
+.arch__layer--compute {
+  background: rgba(167, 139, 250, 0.06);
+  border: 1px solid rgba(167, 139, 250, 0.15);
+}
+
+.arch__layer--data {
+  background: rgba(52, 211, 153, 0.06);
+  border: 1px solid rgba(52, 211, 153, 0.15);
+}
+
+.arch__layer-label {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  display: block;
+}
+
+.arch__nodes {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.arch__node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 10px 14px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  min-width: 80px;
+  text-align: center;
+  transition: all var(--transition-fast);
+}
+
+.arch__node:hover {
+  background: rgba(0, 0, 0, 0.5);
+  transform: scale(1.05);
+}
+
+.arch__node span:first-child {
+  font-size: 1.2rem;
+}
+
+.arch__node-detail {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  color: var(--accent-primary);
+}
+
+.arch__arrow {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+}
+
+.arch__connector {
+  color: var(--text-muted);
+  font-size: 1rem;
+  opacity: 0.4;
+}
+
+/* Details grid */
+.architecture__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.architecture__detail-item {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  align-items: flex-start;
+}
+
+.architecture__detail-num {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent-primary);
+  padding: 4px 8px;
+  background: var(--accent-glow);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+.architecture__detail-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.architecture__detail-desc {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 968px) {
+  .architecture__content {
+    grid-template-columns: 1fr;
+  }
+
+  .architecture__diagram {
+    position: static;
+  }
+}
