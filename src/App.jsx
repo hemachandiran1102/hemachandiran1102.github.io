@@ -45,12 +45,12 @@ function App() {
       <Navbar activeSection={activeSection} />
       <main>
         <Hero />
+        <Architecture />
         <About />
         <Skills />
         <Experience />
         <Projects />
         <Certifications />
-        <Architecture />
         <Contact />
       </main>
       <Footer />
