@@ -87,7 +87,9 @@ export default function Architecture() {
         if (img) {
           try {
             ctx.drawImage(img, 0, 0, sz, sz);
-          } catch (e) {}
+          } catch {
+            // Ignore crossOrigin drawing errors if any
+          }
         }
         return new THREE.CanvasTexture(cv);
       }
